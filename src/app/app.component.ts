@@ -16,6 +16,7 @@ export class AppComponent {
   countries: Country[] = []; // variable where the countries & their data are stored
   isItCorrect: boolean = null; // variable to keep track if the current question has been correctly answered
   correctAnswers: number = 0;
+  maximumNumberOfQuestions: number = 10;
 
   constructor(private getCountriesService: GetCountriesService) {}
 
@@ -23,7 +24,7 @@ export class AppComponent {
     this.getCountriesService.getCountries().subscribe(() => { // subscribing to the service which fetches data from API
       this.countries = this.getCountriesService.allCountries.value; // copying the API data to the component
 
-      while (this.questions.length < 10) { // defining the maximum number of questions (10 in this case)
+      while (this.questions.length < this.maximumNumberOfQuestions) { // defining the maximum number of questions
         let myNumber: number = this.getRandomNumber(); // random number to get a random country
         let otherNumbers: number[] = this.getRandomNumbersOtherThan(myNumber); // random numbers to get wrong answers from other countries
         let typeOfQuestion: number = +(Math.random()).toFixed(0) // random number to randomize the type of question
