@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@400;600;700&display=swap'); /* Google fonts import */
+
+:root {
+    --font: 'Athiti', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Athiti', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #18344e;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white; 
+}
+
+h3 {
+    color: #18344e;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto 4rem 2rem 4rem;
+    grid-row-gap: 2rem;
+    padding: 2rem;
+}
